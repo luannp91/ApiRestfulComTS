@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 
 //  Banco de Dados
-import db from "../config/db"
+import db from "../config/db";
 
 //  Routes
 import router from "./router";
@@ -17,6 +17,10 @@ import router from "./router";
 //  Logger
 import Logger from "../config/logger";
 
+//  Middleware
+import morganMiddleware from "./Middleware/morgan";
+
+app.use(morganMiddleware)
 app.use("/api/", router)
 
 //  app port
