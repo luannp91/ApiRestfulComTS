@@ -1,4 +1,7 @@
+const dbUser = process.env.DB_USER
+const dbPass = process.env.DB_PASS
+
 export default {
     port: 3000,
-    dbUri: "mongodb+srv://johnny:M2LeiJHadAeqcp8@cluster0.tljul.mongodb.net/?retryWrites=true&w=majority"
+    dbUri: `mongodb+srv://${dbUser}:${dbPass}@cluster0.tljul.mongodb.net/?retryWrites=true&w=majority`,
 }
